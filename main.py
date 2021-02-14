@@ -5,7 +5,7 @@ import requests
 import io
 app = FastAPI()
 
-@app.get("/crop/")
+@app.get("/crop")
 async def crop(url: str,xmin: int ,ymin: int,xmax:int,ymax:int):
     try:
         im = Image.open(requests.get(url, stream=True).raw)
